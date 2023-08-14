@@ -2,9 +2,24 @@ version: '3.9'
 services:
   front:
     build: ./front
+    container_name: frontend-container
+    restart: always
     working_dir: /app
     volumes:
       - ./front:/app
     ports:
       - "8080:8080"
-
+  DB:
+      image: 'mysql:latest' 
+      container_name: mysql-container
+      restart: always
+      environment: 
+       MYSQL_ROOT_PASSWORD: root_pw
+       MYSQL_DATABASE: mysql
+       MYSQL_USER: mysql_user
+       MYSQL_PASSWORD: mysql_pw
+      ports: 
+       - '3306:3306' 
+      volumes: 
+       - '/var/lib/mysql'
+    
