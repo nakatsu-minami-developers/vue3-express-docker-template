@@ -9,6 +9,23 @@ services:
       - ./front:/app
     ports:
       - "8080:8080"
+  backend:
+      image: node:18-slim
+      container_name: backend-container
+      environment:
+       - DEBUG=backend:*
+       - CHOKIDAR_USEPOLLING=truecd
+      tty: true
+      ports:
+       - '3000:3000'
+       #ホスト側のsrcをコンテナのbackendにマウント
+      volumes:
+       - ./backend:/app
+       #起動時のカレントディレクトリ
+      working_dir: /app
+      command: 
+         sh -c 'npx tsc; npm run nodemon'
+     
   DB:
       image: 'mysql:latest' 
       container_name: mysql-container
@@ -21,5 +38,9 @@ services:
       ports: 
        - '3306:3306' 
       volumes: 
-       - '/var/lib/mysql'
+       - 'DB:/var/lib/mysql'
+volumes:
+ DB:
+  
+    
     
