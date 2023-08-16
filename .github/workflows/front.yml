@@ -28,4 +28,6 @@ jobs:
       
       - name: Lint
         run: yarn run lint
-      
+
+      - name: Jest
+        run: yarn run test
