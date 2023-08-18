@@ -1,5 +1,5 @@
-function hello (name) {
-  document.body.textContent = 'Hello, ' + nama + '!'
+function hello(name) {
+  document.body.textContent = "Hello, " + nama + "!";
 }
 
-hello('World')
+hello("World");
