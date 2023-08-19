@@ -6,7 +6,7 @@
     "nodemon": "nodemon app/app.js",
     "start": "node ./bin/www",
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx --ignore-path .gitignore",
     "format": "prettier --write --ignore-path .gitignore \"./**/*.{js,jsx,ts,tsx}\""
   },
   "dependencies": {

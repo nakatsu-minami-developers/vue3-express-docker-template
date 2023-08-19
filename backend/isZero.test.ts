@@ -1,6 +1,6 @@
-import { isZero } from "./isZero";
+import { isZero } from './isZero';
 
-test("0を渡したらtrueになること", () => {
+test('0を渡したらtrueになること', () => {
   const result = isZero(0);
   expect(result).toBe(true);
 });
