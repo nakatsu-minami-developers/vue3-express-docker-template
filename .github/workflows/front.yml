@@ -5,12 +5,12 @@ on:
     branches:
       - "*"
     paths:
-      - "front"
+      - "front/**"
   push:
     branches:
       - main
     paths:
-      - "front"
+      - "front/**"
 
 defaults:
   run: 
